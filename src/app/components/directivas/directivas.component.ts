@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivasComponent implements OnInit {
 
   isShow: boolean = true;
+  listNames : string [] = ['Juan','Julia','Javier','Jimena'];
 
-  constructor() { }
+  constructor() {
+    this.listNames.push('Angela');
+  }
 
   ngOnInit(): void {
   }

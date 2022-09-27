@@ -10,4 +10,9 @@
     <button (click)="cambiarVista()" *ngIf="isShow">mostrar texto 2</button>
 
   </div>
+  <div>
+    <div *ngFor="let item of listNames">
+      <p>{{item}}</p>
+    </div>
+  </div>
 </div>
