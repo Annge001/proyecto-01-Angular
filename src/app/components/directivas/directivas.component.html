@@ -1,0 +1,13 @@
+<div>
+  <div *ngIf="isShow">
+    <p>texto 1</p>
+  </div>
+  <div *ngIf="!isShow">
+    <p>texto 2</p>
+  </div>
+  <div>
+    <button (click)="cambiarVista()" *ngIf="!isShow">mostrar texto 1</button>
+    <button (click)="cambiarVista()" *ngIf="isShow">mostrar texto 2</button>
+
+  </div>
+</div>
