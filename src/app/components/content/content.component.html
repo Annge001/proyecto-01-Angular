@@ -1,1 +1,21 @@
-<p>content works!</p>
+<div class="container mt-5">
+  <div class="row g-3 ">
+    <div *ngFor= "let pokemon of POKEMONS" class="col-3">
+      {{pokemon.nombre}}
+      <div class="card">
+        <img src="{{pokemon.img}}" class="card-img-top" alt="">
+        <div class="card-body">
+          <h3 class="card-title">{{pokemon.id }}. {{pokemon.nombre}}</h3>
+          <h5>Ataques</h5>
+          <ul class="list-group">
+            <li *ngfor= "let habilidad of pokemon.habilidades; index as posicion"
+                class="list-group-item d-flex justify-content-between align-items-center">
+              {{posicion}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

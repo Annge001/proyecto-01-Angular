@@ -7,6 +7,8 @@ import { ZonaCentroComponent } from './components/zona-centro/zona-centro.compon
 import { ZonaSurComponent } from './components/zona-sur/zona-sur.component';
 import { InterpolacionesComponent } from './components/interpolaciones/interpolaciones.component';
 import { DirectivasComponent } from './components/directivas/directivas.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ContentComponent } from './components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DirectivasComponent } from './components/directivas/directivas.componen
     ZonaCentroComponent,
     ZonaSurComponent,
     InterpolacionesComponent,
-    DirectivasComponent
+    DirectivasComponent,
+    NavbarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule
