@@ -1,18 +1,21 @@
 <div class="container mt-5">
   <div class="row g-3 ">
-    <div *ngFor= "let pokemon of POKEMONS" class="col-3">
-      {{pokemon.nombre}}
+    <div *ngFor="let pokemon of POKEMONS" class="col-3">
       <div class="card">
         <img src="{{pokemon.img}}" class="card-img-top" alt="">
         <div class="card-body">
-          <h3 class="card-title">{{pokemon.id }}. {{pokemon.nombre}}</h3>
+          <h3 class="card-title">{{pokemon.id }}. {{pokemon.nombre | titlecase}}</h3>
           <h5>Ataques</h5>
           <ul class="list-group">
-            <li *ngfor= "let habilidad of pokemon.habilidades; index as posicion"
-                class="list-group-item d-flex justify-content-between align-items-center">
-              {{posicion}}
+            <li *ngFor="let habilidad of pokemon.habilidades; index as posicion"
+                class="border-card list-group-item d-flex justify-content-between align-items-center">
+              {{habilidad}}
+              <span [ngClass]="posicion % 2 === 0 ? 'bg-primary' : 'bg-danger'"
+                    class="badge rounded-pill">°</span>
             </li>
           </ul>
+          <h5 class="mt-3">Fecha de captura</h5>
+          <p>{{pokemon.fechaDeCaptura | date : "medium"}}</p>
         </div>
       </div>
     </div>
