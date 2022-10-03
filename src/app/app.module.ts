@@ -9,6 +9,9 @@ import { InterpolacionesComponent } from './components/interpolaciones/interpola
 import { DirectivasComponent } from './components/directivas/directivas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContentComponent } from './components/content/content.component';
+import { PadreComponent } from './components/ejComunicacionComponentes/padre/padre.component';
+import { FormularioComponent } from './components/ejComunicacionComponentes/formulario/formulario.component';
+import { TablaComponent } from './components/ejComunicacionComponentes/tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ContentComponent } from './components/content/content.component';
     InterpolacionesComponent,
     DirectivasComponent,
     NavbarComponent,
-    ContentComponent
+    ContentComponent,
+    PadreComponent,
+    FormularioComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule
