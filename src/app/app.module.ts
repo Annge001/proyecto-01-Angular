@@ -12,6 +12,7 @@ import { ContentComponent } from './components/content/content.component';
 import { PadreComponent } from './components/ejComunicacionComponentes/padre/padre.component';
 import { FormularioComponent } from './components/ejComunicacionComponentes/formulario/formulario.component';
 import { TablaComponent } from './components/ejComunicacionComponentes/tabla/tabla.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { TablaComponent } from './components/ejComunicacionComponentes/tabla/tab
     TablaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
