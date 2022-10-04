@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, ValidatorFn, Validators} from "@angular/forms";
 
 @Component({
@@ -8,15 +8,16 @@ import {AbstractControl, FormArray, FormBuilder, FormControl, ValidatorFn, Valid
 })
 export class FormularioComponent implements OnInit {
 
+  @Output() addUsuario: EventEmitter<any> = new EventEmitter<any>();
+
   formulario = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
-    edad: ['', [Validators.required, Validators.min(21), this.validarEdad()]],
+    edad: ['', [Validators.required, Validators.min(21), Validators.max(99), this.validarEdad()]],
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
     habilidades: new FormArray([new FormControl()])
   })
-  private addUsuario: any;
 
   constructor(
     private formBuilder: FormBuilder
@@ -27,6 +28,7 @@ export class FormularioComponent implements OnInit {
 
   submitForm(): void {
     console.log(this.formulario.value);
+    this.formulario.reset();
     this.addUsuario.emit(this.formulario.value);
   }
 
@@ -44,5 +46,7 @@ export class FormularioComponent implements OnInit {
     }
   }
 }
+
+
 
 
