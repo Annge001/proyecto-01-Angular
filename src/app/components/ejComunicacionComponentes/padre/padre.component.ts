@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PadreComponent implements OnInit {
 
+  usuarios: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  agregarUsuario($event: any): void {
+    this.usuarios.push($event);
+    console.log(this.usuarios);
+  }
 }
