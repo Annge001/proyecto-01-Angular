@@ -28,8 +28,8 @@ export class FormularioComponent implements OnInit {
 
   submitForm(): void {
     console.log(this.formulario.value);
-    this.formulario.reset();
     this.addUsuario.emit(this.formulario.value);
+     this.formulario.reset();
   }
 
   get habilidades(): FormArray {
