@@ -10,13 +10,6 @@ export class FormularioComponent implements OnInit {
 
   @Output() addUsuario: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
-
-  ngOnInit(): void {
-  }
-/*
   formulario = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     apellido: ['', [Validators.required]],
@@ -26,7 +19,12 @@ export class FormularioComponent implements OnInit {
     habilidades: new FormArray([new FormControl()])
   })
 
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
+  ngOnInit(): void {
+  }
 
   submitForm(): void {
     console.log(this.formulario.value);
@@ -46,7 +44,9 @@ export class FormularioComponent implements OnInit {
     return (control: AbstractControl): { [key: string]: any } | null => {
       return (!Number.isInteger(parseInt(control.value))) ? { errorEdad: true } : null;
     }
-  }*/
+  }
 }
+
+
 
 
