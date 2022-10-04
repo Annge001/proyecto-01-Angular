@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, ValidatorFn, Validators} from "@angular/forms";
 
 @Component({
@@ -8,15 +8,7 @@ import {AbstractControl, FormArray, FormBuilder, FormControl, ValidatorFn, Valid
 })
 export class FormularioComponent implements OnInit {
 
-  formulario = this.formBuilder.group({
-    nombre: ['', [Validators.required]],
-    apellido: ['', [Validators.required]],
-    edad: ['', [Validators.required, Validators.min(21), this.validarEdad()]],
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
-    habilidades: new FormArray([new FormControl()])
-  })
-  private addUsuario: any;
+  @Output() addUsuario: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private formBuilder: FormBuilder
@@ -24,9 +16,21 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+/*
+  formulario = this.formBuilder.group({
+    nombre: ['', [Validators.required]],
+    apellido: ['', [Validators.required]],
+    edad: ['', [Validators.required, Validators.min(21), Validators.max(99), this.validarEdad()]],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+    habilidades: new FormArray([new FormControl()])
+  })
+
+
 
   submitForm(): void {
     console.log(this.formulario.value);
+    this.formulario.reset();
     this.addUsuario.emit(this.formulario.value);
   }
 
@@ -42,7 +46,7 @@ export class FormularioComponent implements OnInit {
     return (control: AbstractControl): { [key: string]: any } | null => {
       return (!Number.isInteger(parseInt(control.value))) ? { errorEdad: true } : null;
     }
-  }
+  }*/
 }
 
 
